@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.3">
+  <bpmn:process id="Process_1" isExecutable="true">
+    <bpmn:documentation><![CDATA[Vainajaa viimeksi hoitanut lääkäri kirjoittaa luvan hautaamiseen. Lupa 
+annetaan hautaamisesta huolehtivalle. Jos vainajalle tehdään 
+ruumiinavaus, lääketieteellisen ruumiinavauksen jälkeen oma lääkäri 
+kirjoittaa luvan. Oikeuslääketieteellisen ruumiinavauksen jälkeen luvan 
+kirjoittaa oikeuslääkäri. 
+Hautauslupaa ei tarvitse olla vielä hautausjärjestelyitä aloittaessa.
+Hautaustoimisto yleensä huolehtii hautausluvan hankkimisesta ja toimittamisesta
+eteenpäin tarvittaville tahoille. Lupa on toimitettava sille hautausmaan ylläpitäjälle,
+jonne vainaja haudataan. Jos vainaja tuhkataan, lupa toimitetaan myös krematorioon.]]></bpmn:documentation>
+    <bpmn:task id="Task_06yn1ky" name="Order cascet" />
+    <bpmn:task id="Task_1cx5t4v" name="Corpse transport" />
+    <bpmn:task id="Task_1tekvbn" name="order flowers" />
+    <bpmn:task id="Task_0m2sfp8" name="Get the permission to bury">
+      <bpmn:documentation><![CDATA[ainajaa viimeksi hoitanut lääkäri kirjoittaa luvan hautaamiseen. Lupa 
+annetaan hautaamisesta huolehtivalle. Jos vainajalle tehdään 
+ruumiinavaus, lääketieteellisen ruumiinavauksen jälkeen oma lääkäri 
+kirjoittaa luvan. Oikeuslääketieteellisen ruumiinavauksen jälkeen luvan 
+kirjoittaa oikeuslääkäri. 
+Hautauslupaa ei tarvitse olla vielä hautausjärjestelyitä aloittaessa.
+Hautaustoimisto yleensä huolehtii hautausluvan hankkimisesta ja toimittamisesta
+eteenpäin tarvittaville tahoille. Lupa on toimitettava sille hautausmaan ylläpitäjälle,
+jonne vainaja haudataan. Jos vainaja tuhkataan, lupa toimitetaan myös krematorioon.]]></bpmn:documentation>
+    </bpmn:task>
+    <bpmn:task id="Task_17nj15e" name="Check if the deseaced had any agreement  Hautaustoimilaki 1.luku 2.§" />
+    <bpmn:task id="Task_00a5xgg" name="Death certificate">
+      <bpmn:documentation><![CDATA[Hautausluvan kirjoittanut lääkäri kirjoittaa myös kuolintodistuksen. 
+Vainajan lähiomaisella on oikeus saada jäljennös kuolintodistuksesta. 
+Kuolintodistuksessa on selitetty kuolemansyyt ja muita tietoja 
+kuolemasta. Kuolintodistusta ei tarvita hautausjärjestelyissä eikä 
+perunkirjoituksessa. Jos vainajalle tehdään ruumiinavaus,
+kuolintodistuksen saaminen voi kestää kuukausia.]]></bpmn:documentation>
+    </bpmn:task>
+    <bpmn:task id="Task_1eyysu8" name="Official certificate">
+      <bpmn:documentation><![CDATA[Virkatodistus on rekisteriviranomaisen – seurakunta tai maistraatti – kirjoittama todistus,
+joka
+ sisältää vainajan henkilötiedot, kuolinpäivän sekä puolison ja 
+perillisten tiedot  (puolison ja lasten tiedot). Virkatodistusta 
+tarvitaan esimerkiksi pankkiasioinnissa
+tai muussa paikassa, jonne kuolinpäivä ja asioiden hoitajan perillisasema tulee todistaa.
+Virkatodistusta
+ ei kirjoiteta automaattisesti, vaan se tulee tilata seurakunnasta tai 
+maistraatista, riippuen siitä kummassa vainaja on ollut kirjoilla.]]></bpmn:documentation>
+    </bpmn:task>
+    <bpmn:task id="Task_1tarm69" name="Book the priest " />
+    <bpmn:task id="Task_0ukvtxg" name="Book the cantor" />
+    <bpmn:task id="Task_0duvo7z" name="Book the kuolinkellot and kuolinilmoitus" />
+    <bpmn:task id="Task_1rwcn14" name="Connect with church (seurakunta)" />
+    <bpmn:task id="Task_1a1c3cu" name="Take care of digital (RIP)" />
+    <bpmn:task id="Task_06txdae" name="Social media (face, linked in, instagram, twitter)" />
+    <bpmn:task id="Task_1km3sn1" name="Google " />
+    <bpmn:task id="Task_14feb6e" name="Spotify, netflix, viaplay and amazon prime" />
+    <bpmn:task id="Task_0k0vvpz" name="Apple" />
+    <bpmn:task id="Task_0grk4qh" name="Veikkaus" />
+    <bpmn:task id="Task_0fbpuxa" name="Paypal" />
+    <bpmn:endEvent id="EndEvent_182zcth" name="basic data stored">
+      <bpmn:incoming>SequenceFlow_0cknhif</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="get_data" name="write in the data">
+      <bpmn:incoming>SequenceFlow_0837oua</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0cknhif</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0837oua" sourceRef="new_client" targetRef="get_data" />
+    <bpmn:sequenceFlow id="SequenceFlow_0cknhif" sourceRef="get_data" targetRef="EndEvent_182zcth" />
+    <bpmn:startEvent id="StartEvent_020p04o" name="connect with burial service ">
+      <bpmn:outgoing>SequenceFlow_1w45ke6</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_1ryvwo7" name="answer client connect">
+      <bpmn:incoming>SequenceFlow_1w45ke6</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_1w45ke6" sourceRef="StartEvent_020p04o" targetRef="Task_1ryvwo7" />
+    <bpmn:startEvent id="new_client" name="record basic data">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>SequenceFlow_0837oua</bpmn:outgoing>
+      <bpmn:conditionalEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:task id="Task_14njumh" name="order catering" />
+    <bpmn:task id="Task_1f76pqf" name="coffin carriers" />
+    <bpmn:task id="Task_0fygcd0" name="Photography" />
+    <bpmn:task id="Task_04zn9aa" name="Tombstone" />
+    <bpmn:task id="Task_0byi7dn" name="prepare the corpse (clothes and makeup)" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="Task_06yn1ky_di" bpmnElement="Task_06yn1ky">
+        <dc:Bounds x="850.469" y="3" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1cx5t4v_di" bpmnElement="Task_1cx5t4v">
+        <dc:Bounds x="738.469" y="23" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1tekvbn_di" bpmnElement="Task_1tekvbn">
+        <dc:Bounds x="-94" y="476.05600000000004" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0m2sfp8_di" bpmnElement="Task_0m2sfp8">
+        <dc:Bounds x="553.469" y="284" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_17nj15e_di" bpmnElement="Task_17nj15e">
+        <dc:Bounds x="642.469" y="353.05600000000004" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_00a5xgg_di" bpmnElement="Task_00a5xgg">
+        <dc:Bounds x="642.469" y="268.05600000000004" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1eyysu8_di" bpmnElement="Task_1eyysu8">
+        <dc:Bounds x="748.469" y="284" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1tarm69_di" bpmnElement="Task_1tarm69">
+        <dc:Bounds x="248.46900000000005" y="324.05600000000004" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0ukvtxg_di" bpmnElement="Task_0ukvtxg">
+        <dc:Bounds x="277.46900000000005" y="245" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0duvo7z_di" bpmnElement="Task_0duvo7z">
+        <dc:Bounds x="149.46900000000005" y="284.05600000000004" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1rwcn14_di" bpmnElement="Task_1rwcn14">
+        <dc:Bounds x="189.469" y="220.05599999999998" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1a1c3cu_di" bpmnElement="Task_1a1c3cu">
+        <dc:Bounds x="436.469" y="424.056" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_06txdae_di" bpmnElement="Task_06txdae">
+        <dc:Bounds x="532.469" y="447" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1km3sn1_di" bpmnElement="Task_1km3sn1">
+        <dc:Bounds x="408.469" y="484.05600000000004" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_14feb6e_di" bpmnElement="Task_14feb6e">
+        <dc:Bounds x="545.469" y="526.056" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0k0vvpz_di" bpmnElement="Task_0k0vvpz">
+        <dc:Bounds x="436" y="559.056" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0grk4qh_di" bpmnElement="Task_0grk4qh">
+        <dc:Bounds x="328.469" y="559" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0fbpuxa_di" bpmnElement="Task_0fbpuxa">
+        <dc:Bounds x="603.469" y="589.056" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_182zcth_di" bpmnElement="EndEvent_182zcth">
+        <dc:Bounds x="343.469" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="319" y="142" width="86" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_0vylo3z_di" bpmnElement="get_data">
+        <dc:Bounds x="189" y="72" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0837oua_di" bpmnElement="SequenceFlow_0837oua">
+        <di:waypoint xsi:type="dc:Point" x="140" y="112" />
+        <di:waypoint xsi:type="dc:Point" x="189" y="112" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="164.5" y="91" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0cknhif_di" bpmnElement="SequenceFlow_0cknhif">
+        <di:waypoint xsi:type="dc:Point" x="289" y="112" />
+        <di:waypoint xsi:type="dc:Point" x="316" y="112" />
+        <di:waypoint xsi:type="dc:Point" x="316" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="344" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="331" y="110" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_020p04o_di" bpmnElement="StartEvent_020p04o">
+        <dc:Bounds x="-146" y="75.056" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-161" y="115" width="67" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1ryvwo7_di" bpmnElement="Task_1ryvwo7">
+        <dc:Bounds x="-49.531000000000006" y="72.056" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1w45ke6_di" bpmnElement="SequenceFlow_1w45ke6">
+        <di:waypoint xsi:type="dc:Point" x="-110" y="93" />
+        <di:waypoint xsi:type="dc:Point" x="-80" y="93" />
+        <di:waypoint xsi:type="dc:Point" x="-80" y="112" />
+        <di:waypoint xsi:type="dc:Point" x="-50" y="112" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-65" y="96.5" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_1qt72i7_di" bpmnElement="new_client">
+        <dc:Bounds x="104" y="94" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="80" y="130" width="88" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_14njumh_di" bpmnElement="Task_14njumh">
+        <dc:Bounds x="-10.531000000000006" y="404.056" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1f76pqf_di" bpmnElement="Task_1f76pqf">
+        <dc:Bounds x="140" y="456.05600000000004" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0fygcd0_di" bpmnElement="Task_0fygcd0">
+        <dc:Bounds x="20.468999999999994" y="498.05600000000004" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_04zn9aa_di" bpmnElement="Task_04zn9aa">
+        <dc:Bounds x="159.469" y="526" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0byi7dn_di" bpmnElement="Task_0byi7dn">
+        <dc:Bounds x="850.469" y="94.05599999999998" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
