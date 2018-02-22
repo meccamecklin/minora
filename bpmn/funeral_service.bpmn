@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.7.1">
+  <bpmn:process id="Process_1" isExecutable="false">
+    <bpmn:task id="Task_0tdvjvr" name="Book&#10;Transport of D" />
+    <bpmn:subProcess id="SubProcess_1dtr3ri" name="Order Urn">
+      <bpmn:task id="Task_1iu49r6" name="Place order" />
+      <bpmn:task id="Task_15cw766" name="Arrange&#10;delivery" />
+      <bpmn:task id="Task_1ln0dbg" name="Send Notification&#10;To Relatives to&#10;Collect Urn" />
+    </bpmn:subProcess>
+    <bpmn:subProcess id="SubProcess_0pajqsc" name="Order Cascet">
+      <bpmn:task id="Task_177rfh1" name="Place&#10;order" />
+      <bpmn:task id="Task_0m0eeqb" name="Check&#10;Inventory/Stock" />
+      <bpmn:task id="Task_154hxue" name="Arrange&#10;delivery" />
+      <bpmn:startEvent id="StartEvent_1kddo06" />
+      <bpmn:endEvent id="EndEvent_17eav81" />
+    </bpmn:subProcess>
+    <bpmn:subProcess id="SubProcess_0dqnc66" name="Book burial service">
+      <bpmn:task id="Task_13nou1k" name="Book&#10;Chappel" />
+      <bpmn:task id="Task_1ef3jlc" name="Do Perunkirja" />
+      <bpmn:task id="Task_09us6ru" name="Order&#10;flowers" />
+      <bpmn:task id="Task_0nj2e2o" name="Book&#10;Priest" />
+      <bpmn:task id="Task_1k4mo6i" name="Get Burial&#10;Permission" />
+    </bpmn:subProcess>
+    <bpmn:subProcess id="SubProcess_0ob4y4s" name="Book Memorial service">
+      <bpmn:task id="Task_1cyqtbm" name="Order&#10;Memorial&#10;Venue" />
+      <bpmn:task id="Task_19ny4re" name="Order&#10;Catering" />
+      <bpmn:task id="Task_03kcwew" name="Order&#10;flowers" />
+    </bpmn:subProcess>
+    <bpmn:subProcess id="SubProcess_0cdhax3" name="Process Invoice">
+      <bpmn:task id="Task_17w1qmb" name="Create&#10;Invoice" />
+      <bpmn:task id="Task_1e5jf6h" name="Approve&#10;Invoice" />
+      <bpmn:task id="Task_1e55z1w" name="Send&#10;Invoice" />
+      <bpmn:task id="Task_0ph4x16" name="Check&#10;Payment" />
+      <bpmn:task id="Task_12zwwmj" name="Archive&#10;Invoice" />
+      <bpmn:startEvent id="StartEvent_0kat6l0" />
+      <bpmn:endEvent id="EndEvent_19ttbp9" />
+    </bpmn:subProcess>
+    <bpmn:startEvent id="StartEvent_1" name="Funeral&#10;Service&#10;Request&#10;Received">
+      <bpmn:messageEventDefinition />
+    </bpmn:startEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="Task_13nou1k_di" bpmnElement="Task_13nou1k">
+        <dc:Bounds x="220" y="674" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0tdvjvr_di" bpmnElement="Task_0tdvjvr">
+        <dc:Bounds x="295" y="334" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0nj2e2o_di" bpmnElement="Task_0nj2e2o">
+        <dc:Bounds x="570" y="674" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_09us6ru_di" bpmnElement="Task_09us6ru">
+        <dc:Bounds x="570" y="760" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1ef3jlc_di" bpmnElement="Task_1ef3jlc">
+        <dc:Bounds x="456" y="760" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1cyqtbm_di" bpmnElement="Task_1cyqtbm">
+        <dc:Bounds x="1072" y="692" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_19ny4re_di" bpmnElement="Task_19ny4re">
+        <dc:Bounds x="1188" y="692" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_1dtr3ri_di" bpmnElement="SubProcess_1dtr3ri" isExpanded="true">
+        <dc:Bounds x="747" y="423" width="498" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1iu49r6_di" bpmnElement="Task_1iu49r6">
+        <dc:Bounds x="775" y="456" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_15cw766_di" bpmnElement="Task_15cw766">
+        <dc:Bounds x="928" y="494" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_0pajqsc_di" bpmnElement="SubProcess_0pajqsc" isExpanded="true">
+        <dc:Bounds x="522" y="103" width="558" height="297" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_177rfh1_di" bpmnElement="Task_177rfh1">
+        <dc:Bounds x="858" y="273" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0m0eeqb_di" bpmnElement="Task_0m0eeqb">
+        <dc:Bounds x="767" y="142" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_154hxue_di" bpmnElement="Task_154hxue">
+        <dc:Bounds x="730" y="273" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_0dqnc66_di" bpmnElement="SubProcess_0dqnc66" isExpanded="true">
+        <dc:Bounds x="120" y="661" width="613" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_0ob4y4s_di" bpmnElement="SubProcess_0ob4y4s" isExpanded="true">
+        <dc:Bounds x="885" y="661" width="527" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_03kcwew_di" bpmnElement="Task_03kcwew">
+        <dc:Bounds x="935" y="771" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_0cdhax3_di" bpmnElement="SubProcess_0cdhax3" isExpanded="true">
+        <dc:Bounds x="702" y="896" width="888" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_17w1qmb_di" bpmnElement="Task_17w1qmb">
+        <dc:Bounds x="802" y="926" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1e5jf6h_di" bpmnElement="Task_1e5jf6h">
+        <dc:Bounds x="928" y="926" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1e55z1w_di" bpmnElement="Task_1e55z1w">
+        <dc:Bounds x="1054" y="926" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0ph4x16_di" bpmnElement="Task_0ph4x16">
+        <dc:Bounds x="1172" y="926" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_12zwwmj_di" bpmnElement="Task_12zwwmj">
+        <dc:Bounds x="1296" y="926" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1k4mo6i_di" bpmnElement="Task_1k4mo6i">
+        <dc:Bounds x="220" y="760" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1ln0dbg_di" bpmnElement="Task_1ln0dbg">
+        <dc:Bounds x="1045" y="494" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1kddo06_di" bpmnElement="StartEvent_1kddo06">
+        <dc:Bounds x="622" y="227" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="640" y="266" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_17eav81_di" bpmnElement="EndEvent_17eav81">
+        <dc:Bounds x="992" y="227" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1010" y="266" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_0kat6l0_di" bpmnElement="StartEvent_0kat6l0">
+        <dc:Bounds x="721" y="978" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="739" y="1017" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_19ttbp9_di" bpmnElement="EndEvent_19ttbp9">
+        <dc:Bounds x="1454" y="978" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1472" y="1017" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_0yla88o_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="173" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="168" y="138" width="46" height="49" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
